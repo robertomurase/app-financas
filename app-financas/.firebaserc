@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "app-financas-39000": {
+      "hosting": {
+        "app-financas": [
+          "app-financas-39000"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "app-financas-39000"
+  }
+}

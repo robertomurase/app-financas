@@ -1,0 +1,20 @@
+<p>home works!</p>
+
+<div *ngIf="!auth.user">
+  <form action="">
+    <fieldset>
+      <legend>Login</legend>
+      <div>Email</div>
+      <input type="text" name="email" [(ngModel)]="email">
+      <div>Senha</div>
+      <input type="password" name="password" [(ngModel)]="password">
+      <hr>
+      <button (click)="auth.emailSignin(this.email, this.password)">Login with e-mail</button>
+      <button (click)="auth.googleSignin()">Login with Google</button>
+    </fieldset>
+  </form>
+</div>
+
+<div *ngIf="auth.error" style="color: red">
+  {{ auth.error }}
+</div>

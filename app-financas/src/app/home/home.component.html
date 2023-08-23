@@ -1,0 +1,33 @@
+<div *ngIf="auth.user">
+  Logged as <b>{{ auth.user.email }}</b> |
+  <button (click)="auth.signOut()">Sair</button>
+
+  <hr>
+
+  <h2>Firebase list</h2>
+  <div>Name:</div>
+  <div><input [(ngModel)]="formNewName" /></div>
+  <div>Age:</div>
+  <div><input [(ngModel)]="formNewAge" /></div>
+  <br>
+  <button (click)="addItem()">Adicionar</button>
+
+  <br>
+
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Email</th>
+      <th>Comando</th>
+    </tr>
+    <tr *ngFor="let item of list | async">
+      <td [title]="['chave: ' + item.key]">{{ item.name }}</td>
+      <td>{{ item.age }}</td>
+      <td>{{ item.email }}</td>
+      <td>
+        <button (click)="deleteItem(item.key)">Remover</button>
+      </td>
+    </tr>
+  </table>
+</div>
